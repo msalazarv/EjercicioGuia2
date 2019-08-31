@@ -1,42 +1,54 @@
 package com.example.ejercicioguia2;
-
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.appcompat.app.AppCompatActivity;
+
+//import android.support.v7.app.AppCompatActivity;
+
+
+public class MainActivity extends AppCompatActivity {
     EditText edtCorreo, edtContraseña;
-    Button btnIniciarSesion;
+    Button btnIniciarSesion, btnDat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().hide();
-        }
-        edtCorreo=findViewById(R.id.edtCorreo);
-        edtContraseña=findViewById(R.id.edtContraseña);
-        btnIniciarSesion.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btnIniciarSesion:{
-                String correo=edtCorreo.getText().toString();
-                String contraseña=edtContraseña.getText().toString();
-                Intent in = new Intent(this, Segunda.class);
-                in.putExtra("Correo", correo);
-                in.putExtra("Contraseña", contraseña);
-                startAtivity(in);
+        edtCorreo = findViewById(R.id.edtCorreo);
+        edtContraseña = findViewById(R.id.edtContraseña);
+        btnDat = findViewById(R.id.btnDat);
+        btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
+        btnDat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), Segunda.class);
+                startActivityForResult(i, 0);
             }
-            break;
+        });
+        btnIniciarSesion.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                if(Validacion()) {
+                    Intent i = new Intent(v.getContext(), AutoComplete.class);
+                    startActivityForResult(i, 0);
+                }
+                return false;
+            }
+        });
+    }
+    public boolean Validacion(){
+        boolean valor=false;
+        if (edtCorreo.getText().toString().isEmpty() && edtContraseña.getText().toString().isEmpty()){
+            Toast.makeText(this,"No pueden quedar vacios los campos",Toast.LENGTH_SHORT).show();
+        }else{
+            valor=true;
         }
+
+        return valor;
     }
 }

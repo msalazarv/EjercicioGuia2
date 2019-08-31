@@ -5,59 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Segunda">
+    tools:context=".MainActivity">
+
     <TextView
-        android:id="@+id/lblNombre"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:text="Marvin Salazar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Datos Creador:" />
     <TextView
-        android:id="@+id/lblAnimal"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:text="Digite su fruta favorita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-        <AutoCompleteTextView
-            android:layout_marginTop="25dp"
-            android:id="@+id/ACTFrutaFav"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-        android:id="@+id/lblAnimal"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:text="Digite su fruta favorita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-        <AutoCompleteTextView
-        android:layout_marginTop="25dp"
-        android:id="@+id/ACTAnimalFav"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ProgressBar
-        android:id="@+id/ejemPBAR"
-        android:progress="5"
-        android:max="100"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Marvin Wilfredo Salazar Valencia" />
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnProcesar"
-        android:layout_width="wrap_content"
-        android:text="Procesar"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Codigo: SV15-I04-001" />
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Correlativo: #30" />
 </LinearLayout>
